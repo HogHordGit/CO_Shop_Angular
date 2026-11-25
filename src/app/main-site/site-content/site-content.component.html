@@ -1,0 +1,114 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__holder">
+
+      <div class="header__title">FIND CLOTHES THAT MATCHES YOUR STYLE</div>
+      <div class="header__sub-title">Browse through out diverse range of meticulously crafted garments,
+        designed to bring out your individuality and cater to your sense of style.</div>
+      <div class="header__btn">
+        <button class="header__button">Shop Now</button>
+      </div>
+      <div class="header__num-holder">
+        <div class="header__brands brands">
+          <div class="brands__num">200+</div>
+          <div class="brands__text">International Brands</div>
+        </div>
+        <div class="header__products products">
+          <div class="products__num">2,000+</div>
+          <div class="products__text">High-Quality Products</div>
+        </div>
+        <div class="header__customers customers">
+          <div class="customers__num">30,000+</div>
+          <div class="customers__text">Happy Customers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="main__brands-line brands-line">
+    <div class="brands-line__container">
+      <img class="brands-line__img" src="/img/versace.svg" alt="icon">
+      <img class="brands-line__img" src="/img/zara.svg" alt="icon">
+      <img class="brands-line__img" src="/img/gucci.svg" alt="icon">
+      <img class="brands-line__img" src="/img/prada.svg" alt="icon">
+      <img class="brands-line__img" src="/img/cline.svg" alt="icon">
+    </div>
+  </div>
+
+  <div class="main__new-arrivals new-arrivals">
+
+    <div class="new-arrivals__container">
+      <div class="new-arrivals__title">
+        NEW ARRIVALS
+      </div>
+
+      <div class="new-arrivals__holder">
+
+        <div *ngFor="let item of visibleNewClothes" class="new-arrivals__item arrivals-item">
+          <a routerLink="/home/detail/{{item.id}}" routerLinkActive="active" class="arrivals-item__hover"></a>
+          <div class="arrivals-item__block">
+            <img class="arrivals-item__img" src="{{item.img}}" alt="item">
+          </div>
+          <div class="arrivals-item__under-block">
+            <div class="arrivals-item__title">
+              {{item.name}}
+            </div>
+            <div *ngIf="!item.discount" class="arrivals-item__prise">
+              ${{item.prise}}
+            </div>
+            <div *ngIf="item.discount" class="arrivals-item__prise-holder">
+              <div class="arrivals-item__prise-dis">40</div>
+              <div class="arrivals-item__prise-old">{{item.prise}}</div>
+              <div class="arrivals-item__discount">{{item.discount}}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="new-arrivals__btn">
+        <button class="new-arrivals__button" (click)="btnEventNew()">{{flagAllNewGoods ? "View Less" : "View All"}}</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="main__space"></div>
+
+  <div class="main__new-arrivals new-arrivals">
+
+    <div class="new-arrivals__container">
+      <div class="new-arrivals__title">
+        TOP SELLING
+      </div>
+
+      <div class="new-arrivals__holder">
+
+        <div *ngFor="let item of visibleTopClothes" class="new-arrivals__item arrivals-item">
+          <a routerLink="/home/detail/{{item.id}}" routerLinkActive="active" class="arrivals-item__hover"></a>
+          <div class="arrivals-item__block">
+            <img class="arrivals-item__img" src="{{item.img}}" alt="item">
+          </div>
+          <div class="arrivals-item__under-block">
+            <div class="arrivals-item__title">
+              {{item.name}}
+            </div>
+            <div class="arrivals-item__prise">
+              ${{item.prise}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="new-arrivals__btn">
+        <button class="new-arrivals__button" (click)="btnEventTop()">{{flagAllTopGoods ? "View Less" : "View All"}}</button>
+      </div>
+
+    </div>
+  </div>
+
+</main>

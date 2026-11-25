@@ -1,0 +1,68 @@
+<div class="nav__discount">
+  <div class="container">
+    Sigh up and get 20% off to your first order.&nbsp;<span>Sign Up Now</span>
+  </div>
+</div>
+
+<div class="nav__holder">
+  <div class="nav__container">
+    <div class="nav__icon">
+      <div class="nav__icon-text">SHOP.CO</div>
+    </div>
+    <div class="nav__list nav-list">
+      <a href="#" class="nav-list__item">Shop</a>
+      <a href="#" class="nav-list__item">New Arrivals</a>
+      <a href="#" class="nav-list__item">Top Selling</a>
+    </div>
+    <div class="nav__search">
+      <input type="text" class="nav__search-bar">
+    </div>
+    <div class="nav__nav-img">
+      <div class="nav__hopping-cart">
+        <img src="/img/shopping-cart.svg" alt="shopping-cart">
+      </div>
+      <div class="nav__account">
+<!--        <img src="/img/account.svg" alt="account">-->
+        <div class="nav__acc-holder" style="{{checkLogin ? 'display: none' : 'display: flex'}}">
+          <div class="nav__sigh-up">
+            <button (click)="toggleReg()">Sign Up</button>
+
+            <div class="nav__reg" style="{{flagReg ? 'display: block' : 'display: none'}}">
+              <form class="login-block__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="login-block__name-input">
+                  <input class="login-block__input" type="text" placeholder="Name" formControlName="name">
+                </div>
+                <div class="login-block__email-input">
+                  <input class="login-block__input" type="text" placeholder="Login" formControlName="login">
+                </div>
+                <div class="login-block__password-input">
+                  <input class="login-block__input" type="password" placeholder="Password" formControlName="password">
+                </div>
+                <div class="login-block__login-btn">
+                  <button class="login-block__btn" type="submit">Sign Up</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="nav__sigh-in">
+            <button (click)="toggleLog()">Sign In</button>
+
+            <div class="nav__log" style="{{flagLog ? 'display: block' : 'display: none'}}">
+              <form class="login-block__form" [formGroup]="formLog" (ngSubmit)="onSubmitLog()">
+                <div class="login-block__email-input">
+                  <input class="login-block__input" type="text" placeholder="Login" formControlName="login">
+                </div>
+                <div class="login-block__password-input">
+                  <input class="login-block__input" type="password" placeholder="Password" formControlName="password">
+                </div>
+                <div class="login-block__login-btn">
+                  <button class="login-block__btn" type="submit">Sign In</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
