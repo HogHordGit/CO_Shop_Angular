@@ -5,3 +5,5 @@ export const adminPanelLoginURL: String = "/api/v1/login";
 export const mainSiteParticularItem: String = "/api/v1/detail";
 export const userRegURL: String = "/api/v1/registration";
 export const userLogURL: String = "/api/v1/user-login";
+export const analyticsEventURL: string = '/api/v1/analytics/event';
+export const analyticsOnlineURL: string = '/api/v1/analytics/online';

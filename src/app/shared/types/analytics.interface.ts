@@ -1,7 +1,10 @@
 export type AnalyticsEventType =
   | 'session_start'
   | 'page_view'
-  | 'product_view';
+  | 'product_view'
+  |  'heartbeat'
+  | 'page_duration'
+  | 'product_duration';
 
 export interface AnalyticsInterface {
   event_id: string;
@@ -27,4 +30,17 @@ export interface AnalyticsSession {
 export interface AnalyticsResponse {
   message: string;
   event_id: string;
+}
+
+export interface AnalyticsOnlineResponse {
+  online_visitors: number;
+}
+
+export interface AnalyticsPageTracking {
+  pageUrl: string;
+  productId: number | null;
+  startedAt: number | null;
+  durationMs: number;
+  productStartedAt: number | null;
+  productDurationMs: number;
 }
